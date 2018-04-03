@@ -1,0 +1,34 @@
+<div class="main">
+  <div class="container-fluid">
+    {{#if session.isAuthenticated}}
+      <div class="card card-square text-white bg-dark mb-3">
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              You are logged in
+            </div>
+            <div class="col">
+              <span class="float-right">
+                <button type="button" class="btn btn-light" {{action 'invalidateSession'}}>Logout</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/if}}
+    <div class="row">
+      <div class="col">
+        <div class="jumbotron">
+        <h1>Login page</h1>
+        <p class="lead">If you've setup firebase with a user and the config/environment.js file with your firebase credentials you can login using the button below.</p>
+        <p>
+          {{#link-to 'login' class='btn btn-lg btn-success' role='button'}}
+            Go to login
+          {{/link-to}}
+        </p>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{!-- End .main --}}
